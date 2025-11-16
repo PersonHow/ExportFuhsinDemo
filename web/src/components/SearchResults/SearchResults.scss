@@ -1,0 +1,928 @@
+// SearchResults.scss
+.search-results {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    // 結果標題區
+    .results-header {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+        .results-info {
+            h2 {
+                margin: 0 0 12px 0;
+                color: #2c3e50;
+                font-size: 24px;
+            }
+
+            .results-meta {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+
+                span {
+                    color: #6c757d;
+                    font-size: 14px;
+
+                    &.result-count {
+                        font-weight: 600;
+                        color: #2c3e50;
+                    }
+                }
+            }
+
+            .related-stats {
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: 1px solid #e0e0e0;
+                color: #6c757d;
+                font-size: 14px;
+            }
+        }
+    }
+
+    // AI 回答區塊
+    .ai-answer {
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
+
+        .ai-answer-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+
+            svg {
+                color: white;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+        .ai-answer-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 20px;
+            line-height: 1.7;
+
+            p {
+                margin: 6px 0;
+                font-size: 20px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            h4.answer-section-title {
+                margin: 10px 0 6px 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: #ffd700;
+            }
+
+            li.answer-list-item {
+                margin: 4px 0;
+                padding-left: 20px;
+                position: relative;
+                list-style: none;
+
+                &:before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: #ffd700;
+                }
+            }
+        }
+    }
+
+    // 相關文檔列表
+    .results-list {
+        h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .result-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                transform: translateY(-2px);
+            }
+
+            // 標題列
+            .result-header {
+                background: #f8f9fa;
+                padding: 16px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #e0e0e0;
+
+                .result-title-bar {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    flex-wrap: wrap;
+                    flex: 1;
+
+                    .result-number {
+                        background: #667eea;
+                        color: white;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .header-info {
+                        background: #28a745;
+                        color: white;
+                        padding: 4px 12px;
+                        border-radius: 10px;
+                        font-size: 15px;
+                        font-weight: 500;
+                    }
+
+                    .record-id {
+                        color: #495057;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+
+                }
+
+                .score {
+                    margin-left: auto;
+                    color: #6c757d;
+                    font-size: 13px;
+                    padding: 4px 8px;
+                    background: rgba(0, 0, 0, 0.05);
+                    border-radius: 4px;
+                    margin: 0 5px;
+                }
+
+                .expand-button {
+                    background: white;
+                    border: 1px solid #dee2e6;
+                    color: #495057;
+                    padding: 6px 16px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    transition: all 0.2s;
+
+                    &:hover {
+                        background: #667eea;
+                        color: white;
+                        border-color: #667eea;
+                    }
+                }
+            }
+
+            // 元資料
+            .result-metadata {
+                padding: 12px 20px;
+                background: #fafbfc;
+                border-bottom: 1px solid #e0e0e0;
+                display: flex;
+                gap: 24px;
+                font-size: 13px;
+
+                .metadata-item {
+                    color: #6c757d;
+
+                    strong {
+                        color: #495057;
+                        margin-right: 4px;
+                    }
+                }
+            }
+
+            // 簡短摘要
+            .result-preview {
+                padding: 16px 20px;
+
+                .preview-label {
+                    display: inline-block;
+                    background: #e7f3ff;
+                    color: #0066cc;
+                    padding: 4px 12px;
+                    border-radius: 16px;
+                    margin: 4px;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+
+                .preview-text {
+                    margin-top: 12px;
+                    padding: 12px;
+                    background: #f8f9fa;
+                    border-radius: 4px;
+                    font-size: 16px;
+                    line-height: 1.6;
+
+                    strong {
+                        color: #495057;
+                        margin-right: 8px;
+                    }
+
+                    mark {
+                        background: #fff3cd;
+                        color: #856404;
+                        padding: 2px 4px;
+                        border-radius: 3px;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            // 展開的詳細資料
+            .result-details-expanded {
+                padding: 20px;
+                background: #fafbfc;
+
+                .detail-group {
+                    margin-bottom: 24px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .group-title {
+                        color: #2c3e50;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                        padding-bottom: 8px;
+                        border-bottom: 2px solid #e0e0e0;
+                    }
+
+                    .group-content {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 12px;
+
+                        .field-item {
+                            display: flex;
+                            padding: 8px 12px;
+                            background: white;
+                            border-radius: 6px;
+                            border: 1px solid #e0e0e0;
+
+                            .field-label {
+                                color: #6c757d;
+                                min-width: 120px;
+                                font-size: 14px;
+                            }
+
+                            .field-value {
+                                color: #2c3e50;
+                                font-weight: 500;
+                                font-size: 14px;
+                                word-break: break-word;
+                            }
+                        }
+                    }
+                }
+
+                .highlight-section {
+
+                    h4 {
+                        color: #2c3e50;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                    }
+
+                    .highlight-item {
+                        margin-bottom: 16px;
+
+                        strong {
+                            display: block;
+                            color: #495057;
+                            margin-bottom: 8px;
+                            font-size: 14px;
+                        }
+
+                        p {
+                            margin: 8px 0;
+                            padding: 12px;
+                            background: white;
+                            border-radius: 6px;
+                            border: 1px solid #e0e0e0;
+                            line-height: 1.6;
+
+                            mark {
+                                background: #fff3cd;
+                                color: #856404;
+                                padding: 2px 4px;
+                                border-radius: 3px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 響應式設計
+@media (max-width: 768px) {
+    .search-results {
+        padding: 12px;
+
+        .results-header .results-info {
+            h2 {
+                font-size: 20px;
+            }
+
+            .results-meta {
+                font-size: 12px;
+            }
+        }
+
+        .results-list .result-item {
+            .result-header {
+                padding: 12px 16px;
+
+                .result-title {
+                    gap: 8px;
+
+                    .score {
+                        margin-left: 0;
+                        width: 100%;
+                        margin-top: 8px;
+                    }
+                }
+            }
+
+            .result-details-expanded {
+                padding: 16px;
+
+                .field-group .group-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}
+
+// 深色模式支援
+@media (prefers-color-scheme: dark) {
+    .search-results {
+        background: #1a1a1a;
+        color: #e0e0e0;
+
+        .results-header {
+            background: #2d2d2d;
+
+            .results-info h2 {
+                color: #e0e0e0;
+            }
+        }
+
+        .results-list .result-item {
+            background: #2d2d2d;
+            border-color: #3d3d3d;
+
+            .result-header {
+                background: #333;
+                border-color: #3d3d3d;
+            }
+
+            .result-metadata {
+                background: #2a2a2a;
+                border-color: #3d3d3d;
+            }
+
+            .result-summary {
+                .summary-item {
+                    background: #1a3a52;
+                    color: #4da3ff;
+                }
+
+                .brief-highlight {
+                    background: #2a2a2a;
+                    border-color: #667eea;
+                }
+            }
+
+            .result-details-expanded {
+                background: #2a2a2a;
+
+                .field-group .group-content .field-item {
+                    background: #333;
+                    border-color: #3d3d3d;
+
+                    .field-value {
+                        color: #e0e0e0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 在現有的 SearchResults.scss 中新增以下樣式
+
+// 文件連結樣式增強
+.result-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .file-link {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        // 預覽按鈕
+        &.view-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+
+            &:hover {
+                background: linear-gradient(135deg, #5568d3 0%, #65408a 100%);
+            }
+        }
+
+        // 下載按鈕
+        &.download-link {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+
+            &:hover {
+                background: linear-gradient(135deg, #d97ee0 0%, #dc4456 100%);
+            }
+        }
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        span {
+            white-space: nowrap;
+        }
+    }
+
+    .score {
+        padding: 0.3rem 0.6rem;
+        background: rgba(59, 130, 246, 0.1);
+        color: #2563eb;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .expand-button {
+        padding: 0.4rem 0.8rem;
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        color: #374151;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #e5e7eb;
+            border-color: #d1d5db;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
+// 響應式設計
+@media (max-width: 768px) {
+    .result-actions {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .file-link {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.8rem;
+
+            span {
+                display: none; // 在小屏幕上隱藏文字，只顯示圖標
+            }
+        }
+
+        .score {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .expand-button {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.6rem;
+        }
+    }
+}
+
+// 文件不存在或加載失敗的狀態
+.file-link-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+// 添加文件類型圖標
+.file-type-icon {
+    &.pdf {
+        color: #dc2626;
+    }
+
+    &.doc {
+        color: #2563eb;
+    }
+
+    &.xls {
+        color: #059669;
+    }
+}
+
+// 下載狀態提示
+.download-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 6px;
+    color: #166534;
+    font-size: 0.875rem;
+
+    &.downloading {
+        background: #eff6ff;
+        border-color: #93c5fd;
+        color: #1e40af;
+    }
+
+    &.error {
+        background: #fef2f2;
+        border-color: #fca5a5;
+        color: #991b1b;
+    }
+}
+
+// 文件詳情區的下載區塊
+.file-download-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: 8px;
+    border: 1px solid #e0e7ff;
+
+    .download-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+
+        svg {
+            color: #667eea;
+        }
+
+        h5 {
+            margin: 0;
+            color: #374151;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+    }
+
+    .download-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .file-info {
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid #e0e7ff;
+        font-size: 0.85rem;
+        color: #6b7280;
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.25rem;
+
+            .info-label {
+                font-weight: 600;
+                color: #374151;
+            }
+        }
+    }
+}
+
+// 在 SearchResults.scss 中添加以下樣式
+
+// 🆕 關鍵資訊預覽區塊優化
+.result-preview {
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    margin-top: 12px;
+    line-height: 1.6;
+
+    .preview-label {
+        font-weight: 600;
+        color: #495057;
+        margin-right: 8px;
+        font-size: 0.9rem;
+    }
+
+    .preview-text {
+        color: #212529;
+
+        mark {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+    }
+}
+
+// 🆕 詳細內容區塊優化
+.result-details-expanded {
+    padding: 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+
+    .detail-group {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .group-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 16px;
+                background-color: #007bff;
+                margin-right: 8px;
+                border-radius: 2px;
+            }
+        }
+
+        .group-content {
+            padding-left: 12px;
+
+            .detail-item {
+                margin-bottom: 8px;
+                line-height: 1.6;
+
+                .detail-label {
+                    font-weight: 500;
+                    color: #6c757d;
+                    margin-right: 6px;
+                }
+
+                .detail-value {
+                    color: #212529;
+                }
+            }
+        }
+    }
+}
+
+// 🆕 相關內容片段區塊
+.highlight-section {
+    margin-top: 20px;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+
+    .group-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: #ffc107;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+    }
+
+    .highlight-values {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .highlight-fragment {
+            background-color: #ffffff;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+            line-height: 1.6;
+            position: relative;
+
+            .fragment-label {
+                display: inline-block;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: #6c757d;
+                margin-bottom: 6px;
+                padding: 2px 8px;
+                background-color: #e9ecef;
+                border-radius: 3px;
+            }
+
+            .fragment-content {
+                margin: 8px 0 0 0;
+                color: #212529;
+            }
+
+            mark {
+                background-color: #fff3cd;
+                padding: 2px 4px;
+                border-radius: 2px;
+                font-weight: 500;
+                color: #856404;
+            }
+        }
+    }
+
+    .highlight-item {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-field {
+            font-weight: 600;
+            color: #495057;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// 🆕 下載按鈕優化
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: #218838;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+// 🆕 摘要說明區塊
+.detail-group {
+    &:has(.group-title:contains('摘要說明')) {
+        background-color: #e7f3ff;
+        padding: 12px;
+        border-radius: 6px;
+        border-left: 4px solid #007bff;
+
+        .group-title {
+            color: #0056b3;
+            border-bottom-color: #007bff;
+        }
+    }
+}
+
+// 響應式調整
+@media (max-width: 768px) {
+    .result-preview {
+        padding: 10px 12px;
+
+        .preview-label {
+            display: block;
+            margin-bottom: 6px;
+        }
+    }
+
+    .result-details-expanded {
+        padding: 12px;
+
+        .detail-group {
+            margin-bottom: 16px;
+
+            .group-title {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    .highlight-section {
+        padding: 12px;
+
+        .highlight-values {
+            gap: 10px;
+
+            .highlight-fragment {
+                padding: 10px;
+            }
+        }
+    }
+
+    .download-button {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+}
