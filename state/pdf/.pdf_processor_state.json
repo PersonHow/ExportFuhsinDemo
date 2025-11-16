@@ -1,0 +1,202 @@
+{
+  "G鎖-客訴資料.pdf": {
+    "hash": "14bd619597d15bb67736ac2d2bb66b61",
+    "processed_at": "2025-09-19T07:10:16.649857",
+    "doc_id": "14bd619597d15bb67736ac2d2bb66b61",
+    "status": "success",
+    "page_count": 4,
+    "doc_type": "ECN",
+    "product_count": 2,
+    "has_form_data": false
+  },
+  "G鎖-設變單通知單-2.pdf": {
+    "hash": "4aaba5a3f02340689babb7b14ee65a5e",
+    "processed_at": "2025-09-19T07:10:20.317554",
+    "doc_id": "4aaba5a3f02340689babb7b14ee65a5e",
+    "status": "success",
+    "page_count": 1,
+    "doc_type": "ECN",
+    "product_count": 1,
+    "has_form_data": false
+  },
+  "G鎖-設變單通知單-3.pdf": {
+    "hash": "6bf770b90da0b8a628832417c986ac6b",
+    "processed_at": "2025-09-19T07:10:24.002968",
+    "doc_id": "6bf770b90da0b8a628832417c986ac6b",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 0,
+    "has_form_data": false
+  },
+  "G鎖-FMEA.pdf": {
+    "hash": "bdec58ec7050c183f25d40c72eb99fd1",
+    "processed_at": "2025-09-19T07:10:25.224933",
+    "doc_id": "bdec58ec7050c183f25d40c72eb99fd1",
+    "status": "success",
+    "page_count": 1,
+    "doc_type": "DFMEA",
+    "product_count": 0,
+    "has_form_data": true
+  },
+  "G鎖-設變單通知單-4.pdf": {
+    "hash": "a5377430df38c25638fc085aecac5396",
+    "processed_at": "2025-09-19T07:10:38.455248",
+    "doc_id": "a5377430df38c25638fc085aecac5396",
+    "status": "success",
+    "page_count": 6,
+    "doc_type": "ECN",
+    "product_count": 4,
+    "has_form_data": false
+  },
+  "G鎖-設變單通知單.pdf": {
+    "hash": "6a26a308c7e2cc71ff36a3085db99b7f",
+    "processed_at": "2025-09-19T07:10:44.068107",
+    "doc_id": "6a26a308c7e2cc71ff36a3085db99b7f",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 4,
+    "has_form_data": false
+  },
+  "G鎖-設變申請單-2.pdf": {
+    "hash": "6d9be5e45272d95f03119a3d749e8cdd",
+    "processed_at": "2025-09-19T07:11:19.824608",
+    "doc_id": "6d9be5e45272d95f03119a3d749e8cdd",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 0,
+    "has_form_data": false
+  },
+  "G鎖-設變申請單-3.pdf": {
+    "hash": "a28d93bc4030c9affa7ed94e60c1505d",
+    "processed_at": "2025-09-19T07:11:53.148871",
+    "doc_id": "a28d93bc4030c9affa7ed94e60c1505d",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 0,
+    "has_form_data": false
+  },
+  "G鎖-設變申請單-4.pdf": {
+    "hash": "61003b13334fd0e8613b06a46f3a9ccb",
+    "processed_at": "2025-09-19T07:12:34.458282",
+    "doc_id": "61003b13334fd0e8613b06a46f3a9ccb",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 2,
+    "has_form_data": false
+  },
+  "G鎖-設變申請單.pdf": {
+    "hash": "fd8deff426946af82c89f7866e68007d",
+    "processed_at": "2025-09-19T07:13:14.175778",
+    "doc_id": "fd8deff426946af82c89f7866e68007d",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 0,
+    "has_form_data": false
+  },
+  "L鎖-設變單申請單.pdf": {
+    "hash": "29f383c52a6df13fdccf717b810a8bf5",
+    "processed_at": "2025-09-19T07:15:24.264525",
+    "doc_id": "29f383c52a6df13fdccf717b810a8bf5",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 2,
+    "has_form_data": false
+  },
+  "L鎖-設變單通知單.pdf": {
+    "hash": "f97675b378548c68a58b04df0be5ac0e",
+    "processed_at": "2025-09-19T07:15:26.970551",
+    "doc_id": "f97675b378548c68a58b04df0be5ac0e",
+    "status": "success",
+    "page_count": 1,
+    "doc_type": "ECN",
+    "product_count": 3,
+    "has_form_data": false
+  },
+  "T鎖-FMEA.pdf": {
+    "hash": "104a64607ee0a7f76dd02d527d9a0583",
+    "processed_at": "2025-09-19T07:15:28.733754",
+    "doc_id": "104a64607ee0a7f76dd02d527d9a0583",
+    "status": "success",
+    "page_count": 1,
+    "doc_type": "DFMEA",
+    "product_count": 0,
+    "has_form_data": true
+  },
+  "T鎖-客訴資料.pdf": {
+    "hash": "3cf71fab9c44316b2c547e2421bc6c9e",
+    "processed_at": "2025-09-19T07:17:10.632975",
+    "doc_id": "3cf71fab9c44316b2c547e2421bc6c9e",
+    "status": "success",
+    "page_count": 4,
+    "doc_type": "ECN",
+    "product_count": 1,
+    "has_form_data": false
+  },
+  "T鎖-設變單申請單-2.pdf": {
+    "hash": "febe31b61127f57cda7c6d0ea0956963",
+    "processed_at": "2025-09-19T07:17:50.171580",
+    "doc_id": "febe31b61127f57cda7c6d0ea0956963",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 2,
+    "has_form_data": false
+  },
+  "T鎖-設變單申請單-3.pdf": {
+    "hash": "63d649ec07a4c03cd7e560e41bb008dd",
+    "processed_at": "2025-09-19T07:18:26.825235",
+    "doc_id": "63d649ec07a4c03cd7e560e41bb008dd",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 0,
+    "has_form_data": false
+  },
+  "T鎖-設變單申請單.pdf": {
+    "hash": "b726ea652266f977557a03eff4d99d63",
+    "processed_at": "2025-09-19T07:19:04.748024",
+    "doc_id": "b726ea652266f977557a03eff4d99d63",
+    "status": "success",
+    "page_count": 2,
+    "doc_type": "ECN",
+    "product_count": 2,
+    "has_form_data": false
+  },
+  "T鎖-設變單通知單-2.pdf": {
+    "hash": "586b5cf0bb605cb8c3d3c45228424a18",
+    "processed_at": "2025-09-19T07:19:21.993119",
+    "doc_id": "586b5cf0bb605cb8c3d3c45228424a18",
+    "status": "success",
+    "page_count": 4,
+    "doc_type": "ECN",
+    "product_count": 2,
+    "has_form_data": false
+  },
+  "T鎖-設變單通知單-3.pdf": {
+    "hash": "220481c684f34e438a29eaa2e76acdb2",
+    "processed_at": "2025-09-19T07:19:35.341947",
+    "doc_id": "220481c684f34e438a29eaa2e76acdb2",
+    "status": "success",
+    "page_count": 4,
+    "doc_type": "ECN",
+    "product_count": 1,
+    "has_form_data": false
+  },
+  "T鎖-設變單通知單.pdf": {
+    "hash": "1b587728e54700bf29d9ada689598b31",
+    "processed_at": "2025-09-19T07:19:58.782995",
+    "doc_id": "1b587728e54700bf29d9ada689598b31",
+    "status": "success",
+    "page_count": 5,
+    "doc_type": "ECN",
+    "product_count": 4,
+    "has_form_data": false
+  }
+}
