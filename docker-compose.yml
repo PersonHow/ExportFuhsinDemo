@@ -119,6 +119,9 @@ services:
       - ES_WAIT_TIMEOUT=180
       - REQUESTS_TIMEOUT=30
       - MAX_RETRIES=5
+      - AUTO_STOP_ENABLED=${AUTO_STOP_ENABLED:-false}
+      - AUTO_STOP_EMPTY_ROUNDS=${AUTO_STOP_EMPTY_ROUNDS:-3}
+      - AUTO_STOP_FAIL_LIMIT=${AUTO_STOP_FAIL_LIMIT:-5}
     volumes:
       - ./scripts/vector:/app:ro
       - ./logs/vector:/logs:rw
@@ -300,6 +303,8 @@ services:
       - PAGE_SIZE=${DB_PAGE_SIZE:-3000}
       - PARALLEL_THREADS=${PARALLEL_THREADS:-4}
       - SLEEP_SECONDS=${DB_SYNC_INTERVAL:-30}
+      - AUTO_STOP_ENABLED=${AUTO_STOP_ENABLED:-false}
+      - AUTO_STOP_EMPTY_ROUNDS=${AUTO_STOP_EMPTY_ROUNDS:-3}
     volumes:
       - ./scripts/db-sync-2:/app:ro        # 放你的 db-sync-2.py
       - ./state:/state                 # 狀態檔持久化（.sync_state.json）

@@ -34,6 +34,9 @@ SYNC_INTERVAL = int(os.environ.get('DB_SYNC_INTERVAL', '60'))
 AUTO_STOP_ENABLED = os.environ.get("AUTO_STOP_ENABLED", "false").lower() in ("true", "1", "yes")
 AUTO_STOP_EMPTY_ROUNDS = int(os.environ.get("AUTO_STOP_EMPTY_ROUNDS", "3"))
 
+# 狀態檔配置
+STATE_FILE = os.environ.get("STATE_FILE", "/state/.sync_state.json")
+
 # ========== 日誌配置 ==========
 logging.basicConfig(
     level=logging.INFO,
@@ -52,6 +55,54 @@ def to_bool(v):
         if s in ('1','true','yes','y','on'): return True
         if s in ('0','false','no','n','off',''): return False
     return None
+
+
+# ========== 狀態管理 ==========
+class StateManager:
+    """管理同步狀態的持久化"""
+    def __init__(self, state_file: str = STATE_FILE):
+        self.state_file = state_file
+        self.state = self._load_state()
+    
+    def _load_state(self) -> Dict:
+        """載入狀態檔"""
+        try:
+            # 確保目錄存在
+            state_dir = os.path.dirname(self.state_file)
+            if state_dir:
+                os.makedirs(state_dir, exist_ok=True)
+            
+            if os.path.exists(self.state_file):
+                with open(self.state_file, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+        except Exception as e:
+            logger.warning(f"⚠️  無法讀取狀態檔: {e}")
+        return {}
+    
+    def _save_state(self):
+        """保存狀態檔"""
+        try:
+            state_dir = os.path.dirname(self.state_file)
+            if state_dir:
+                os.makedirs(state_dir, exist_ok=True)
+            
+            with open(self.state_file, 'w', encoding='utf-8') as f:
+                json.dump(self.state, f, indent=2, ensure_ascii=False, default=str)
+        except Exception as e:
+            logger.error(f"❌ 無法保存狀態檔: {e}")
+    
+    def get_last_sync_time(self, table_name: str) -> Optional[str]:
+        """獲取表的最後同步時間"""
+        return self.state.get(table_name, {}).get('last_modified')
+    
+    def update_sync_time(self, table_name: str, last_modified: datetime, record_count: int):
+        """更新表的同步時間"""
+        self.state[table_name] = {
+            'last_modified': last_modified.isoformat(),
+            'record_count': record_count,
+            'synced_at': datetime.now().isoformat()
+        }
+        self._save_state()
 
 # ========== Elasticsearch 客戶端 ==========
 class ElasticsearchClient:
@@ -300,7 +351,7 @@ class MySQLSyncer:
     def __init__(self, es_client: ElasticsearchClient):
         self.es_client = es_client
         self.connection = None
-        self.last_sync_times = {}
+        self.state_mgr = StateManager()
         self.last_doc_counts = {}  # 追蹤每個索引的文檔數
         
     def connect(self):
@@ -331,16 +382,29 @@ class MySQLSyncer:
             # 建立或更新索引
             self.es_client.create_index(index_name, doc_type)
             
-            # 獲取總筆數
+            # 獲取上次同步時間
+            last_sync_time = self.state_mgr.get_last_sync_time(table_name)
+            
+            # 構建增量查詢
+            count_query = f"SELECT COUNT(*) as total FROM {table_name}"
+            where_clause = ""
+            if last_sync_time:
+                where_clause = f" WHERE last_modified > '{last_sync_time}'"
+                count_query += where_clause
+            
+            # 獲取新增/更新的筆數
             with self.connection.cursor() as cursor:
-                cursor.execute(f"SELECT COUNT(*) as total FROM {table_name}")
+                cursor.execute(count_query)
                 total = cursor.fetchone()['total']
-                
+            
             if total == 0:
-                logger.info(f"資料表 {table_name} 沒有資料")
+                if last_sync_time:
+                    logger.debug(f"📭 {table_name} 沒有新資料（上次同步: {last_sync_time[:19]}）")
+                else:
+                    logger.info(f"資料表 {table_name} 沒有資料")
                 return False
             
-            logger.info(f"📊 開始同步 {table_name}: 共 {total} 筆資料")
+            logger.info(f"📊 開始同步 {table_name}: {'增量' if last_sync_time else '全量'} {total} 筆資料")
             
             # 使用多執行緒處理
             with ThreadPoolExecutor(max_workers=PARALLEL_THREADS) as executor:
@@ -352,7 +416,8 @@ class MySQLSyncer:
                         table_name, 
                         index_name, 
                         offset, 
-                        min(PAGE_SIZE, total - offset)
+                        min(PAGE_SIZE, total - offset),
+                        where_clause  # 傳遞 WHERE 條件
                     )
                     futures.append(future)
                 
@@ -365,30 +430,26 @@ class MySQLSyncer:
                     except Exception as e:
                         logger.error(f"批次處理失敗: {e}")
             
-            # 記錄同步時間
-            self.last_sync_times[table_name] = datetime.now()
+            # 獲取最新的 last_modified 時間
+            with self.connection.cursor() as cursor:
+                cursor.execute(f"SELECT MAX(last_modified) as max_time FROM {table_name}")
+                result = cursor.fetchone()
+                max_modified_time = result['max_time'] if result else datetime.now()
+            
+            # 更新狀態
+            self.state_mgr.update_sync_time(table_name, max_modified_time, indexed_total)
             
             # 獲取最終文檔數
             final_count = self.es_client.get_doc_count(index_name)
             logger.info(f"✅ {table_name} 同步完成: 索引 {indexed_total} 筆，總計 {final_count} 筆文檔")
             
-            # 檢查是否有新數據
-            had_new_data = False
-            if index_name in self.last_doc_counts:
-                had_new_data = final_count > self.last_doc_counts[index_name]
-            else:
-                had_new_data = final_count > 0
-            
-            # 更新文檔計數
-            self.last_doc_counts[index_name] = final_count
-            
-            return had_new_data
+            return True  # 有新資料就返回 True
             
         except Exception as e:
             logger.error(f"❌ 同步 {table_name} 時發生錯誤: {e}")
             return False
     
-    def _sync_batch(self, table_name: str, index_name: str, offset: int, limit: int) -> int:
+    def _sync_batch(self, table_name: str, index_name: str, offset: int, limit: int, where_clause: str = "") -> int:
         """同步一批資料"""
         conn = None
         try:
@@ -405,8 +466,8 @@ class MySQLSyncer:
             
             indexed = 0
             with conn.cursor() as cursor:
-                # 查詢資料
-                query = f"SELECT * FROM {table_name} LIMIT %s OFFSET %s"
+                # 查詢資料（支持增量查詢）
+                query = f"SELECT * FROM {table_name}{where_clause} LIMIT %s OFFSET %s"
                 cursor.execute(query, (limit, offset))
                 
                 # 批次處理
