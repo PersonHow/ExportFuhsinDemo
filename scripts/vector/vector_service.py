@@ -5,12 +5,8 @@
 根據文檔類型提取最相關的文本生成向量
 """
 
-import os
-import time
-import json
-import signal
-import requests
-import math
+import os, time, json
+import signal, requests, math
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Tuple
 from requests.auth import HTTPBasicAuth
@@ -38,6 +34,7 @@ MAX_RETRIES = int(os.environ.get("MAX_RETRIES", "5"))
 # 自動停止配置
 AUTO_STOP_ENABLED = os.environ.get("AUTO_STOP_ENABLED", "false").lower() in ("true", "1", "yes")
 AUTO_STOP_EMPTY_ROUNDS = int(os.environ.get("AUTO_STOP_EMPTY_ROUNDS", "3"))
+AUTO_STOP_FAIL_LIMIT = int(os.environ.get("AUTO_STOP_FAIL_LIMIT", "5"))
 
 # ========== 日誌配置 ==========
 logging.basicConfig(
@@ -626,6 +623,7 @@ def main() -> None:
     log(f"🤖 自動停止：{'啟用' if AUTO_STOP_ENABLED else '停用'}")
     if AUTO_STOP_ENABLED:
         log(f"   連續空輪上限：{AUTO_STOP_EMPTY_ROUNDS} 次")
+    log(f"⚠️  失敗停止上限：{AUTO_STOP_FAIL_LIMIT} 次")
     log("=" * 60)
     
     try:
@@ -640,16 +638,33 @@ def main() -> None:
     
     # 自動停止計數器
     empty_rounds = 0
+    consecutive_failures = 0  # 連續失敗計數器
     total_processed = 0
     
     while not _SHOULD_STOP:
         try:
             docs = updater.find_documents_without_vectors(INDEX_PATTERN, size=BATCH_SIZE)
             if docs:
-                # 找到文檔，重置計數器
+                # 找到文檔，重置空輪計數器
                 empty_rounds = 0
-                ok_count, _ = updater.update_document_vectors(docs)
-                total_processed += ok_count
+                ok_count, fail_count = updater.update_document_vectors(docs)
+                
+                # 檢查是否全部失敗
+                if ok_count == 0 and fail_count > 0:
+                    consecutive_failures += 1
+                    log(f"⚠️  向量生成/寫入失敗 (連續失敗 {consecutive_failures}/{AUTO_STOP_FAIL_LIMIT})")
+                    
+                    # 檢查是否達到失敗上限
+                    if consecutive_failures >= AUTO_STOP_FAIL_LIMIT:
+                        log("=" * 60)
+                        log(f"❌ 錯誤！向量添加連續失敗 {consecutive_failures} 次")
+                        log(f"🛑 自動停止服務以避免持續錯誤")
+                        log("=" * 60)
+                        break
+                else:
+                    # 有成功的，重置失敗計數器
+                    consecutive_failures = 0
+                    total_processed += ok_count
             else:
                 # 沒有找到文檔
                 empty_rounds += 1
@@ -665,8 +680,16 @@ def main() -> None:
                     break
                     
         except Exception as e:
-            log(f"❌ 主循環錯誤：{e}")
-            # 錯誤時不計入空輪次
+            consecutive_failures += 1
+            log(f"❌ 主循環錯誤 (連續失敗 {consecutive_failures}/{AUTO_STOP_FAIL_LIMIT})：{e}")
+            
+            # 檢查是否達到失敗上限
+            if consecutive_failures >= AUTO_STOP_FAIL_LIMIT:
+                log("=" * 60)
+                log(f"❌ 錯誤！主循環連續失敗 {consecutive_failures} 次")
+                log(f"🛑 自動停止服務以避免持續錯誤")
+                log("=" * 60)
+                break
         
         time.sleep(SLEEP_SEC)
     

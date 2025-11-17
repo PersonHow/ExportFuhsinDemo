@@ -400,61 +400,65 @@
     }
 }
 
-// 深色模式支援
-@media (prefers-color-scheme: dark) {
-    .search-results {
-        background: #1a1a1a;
-        color: #e0e0e0;
+// // 深色模式支援
+// @media (prefers-color-scheme: dark) {
+//     .search-results {
+//         background: #1a1a1a;
+//         color: #e0e0e0;
 
-        .results-header {
-            background: #2d2d2d;
+//         .results-header {
+//             background: #2d2d2d;
 
-            .results-info h2 {
-                color: #e0e0e0;
-            }
-        }
+//             .results-info h2 {
+//                 color: #e0e0e0;
+//             }
+//         }
 
-        .results-list .result-item {
-            background: #2d2d2d;
-            border-color: #3d3d3d;
+//         .results-list .result-item {
+//             background: #2d2d2d;
+//             border-color: #3d3d3d;
 
-            .result-header {
-                background: #333;
-                border-color: #3d3d3d;
-            }
+//             .result-header {
+//                 background: #333;
+//                 border-color: #3d3d3d;
+//             }
 
-            .result-metadata {
-                background: #2a2a2a;
-                border-color: #3d3d3d;
-            }
+//             .result-preview{
+//                 background: #333;
+//             }
 
-            .result-summary {
-                .summary-item {
-                    background: #1a3a52;
-                    color: #4da3ff;
-                }
+//             .result-metadata {
+//                 background: #2a2a2a;
+//                 border-color: #3d3d3d;
+//             }
 
-                .brief-highlight {
-                    background: #2a2a2a;
-                    border-color: #667eea;
-                }
-            }
+//             .result-summary {
+//                 .summary-item {
+//                     background: #1a3a52;
+//                     color: #4da3ff;
+//                 }
 
-            .result-details-expanded {
-                background: #2a2a2a;
+//                 .brief-highlight {
+//                     background: #2a2a2a;
+//                     border-color: #667eea;
+//                 }
+//             }
 
-                .field-group .group-content .field-item {
-                    background: #333;
-                    border-color: #3d3d3d;
+//             .result-details-expanded {
+//                 background: #2a2a2a;
 
-                    .field-value {
-                        color: #e0e0e0;
-                    }
-                }
-            }
-        }
-    }
-}
+//                 .field-group .group-content .field-item {
+//                     background: #333;
+//                     border-color: #3d3d3d;
+
+//                     .field-value {
+//                         color: #e0e0e0;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 // 在現有的 SearchResults.scss 中新增以下樣式
