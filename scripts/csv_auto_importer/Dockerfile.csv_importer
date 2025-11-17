@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# 安裝依賴
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 複製主程式
+COPY csv_auto_importer.py .
+
+# 建立必要目錄
+RUN mkdir -p /csv/incoming /state /logs/csv_importer
+
+CMD ["python", "-u", "csv_auto_importer.py"]

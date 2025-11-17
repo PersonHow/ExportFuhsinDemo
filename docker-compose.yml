@@ -205,7 +205,7 @@ services:
       - elastic
 
   # 自動檔案處理服務
-  mysql_auto_importer:
+  mysql_importer:
     build:
       context: ./scripts/mysql_auto_importer
       dockerfile: Dockerfile.mysql_auto_importer
@@ -239,103 +239,32 @@ services:
     networks:
       - elastic
   
-  # pdf 轉入 db
-  pdf-processor:
+# CSV 自動匯入服務
+  csv_importer:
     build:
-      context: ./scripts/pdf_processor
-      dockerfile: Dockerfile.pdf_processor
-    container_name: pdf-processor
+      context: ./scripts/csv_auto_importer
+      dockerfile: Dockerfile.csv_importer
+    container_name: csv_auto_importer
     depends_on:
       mysql:
         condition: service_healthy
     environment:
-    # MySQL 連線設定（可從 .env 帶入）
       - MYSQL_HOST=mysql
       - MYSQL_PORT=3306
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
       - MYSQL_DATABASE=fuhsin_erp_demo
-    
-    # PDF 處理設定
-      - PDF_WATCH_DIR=/mnt/pdf/incoming         # 監控目錄
-      - SCAN_INTERVAL=${PDF_SCAN_INTERVAL:-20}  # 掃描間隔（秒）
-      - PROCESS_BATCH_SIZE=${PDF_BATCH_SIZE:-3} # 每批處理檔案數
-      - ENABLE_OCR=${ENABLE_OCR:-true}          # 是否啟用 OCR
-      - OCR_LANG=chi_tra+eng                    # OCR 語言（繁體中文+英文）
-      - OCR_DPI=${OCR_DPI:-300}                # 解析度 300
-    
-    # 日誌設定
-      - LOG_LEVEL=INFO
-      - PYTHONUNBUFFERED=1
-    
+      - CSV_WATCH_DIR=/csv/incoming
+      - CSV_SCAN_INTERVAL=${CSV_SCAN_INTERVAL:-10}
+      - CSV_CHUNK_SIZE=${CSV_CHUNK_SIZE:-5000}
     volumes:
-      - ./scripts/pdf_processor:/app:ro
-      - ./pdf:/mnt/pdf
-      - ./state/pdf:/state
-      - ./logs/pdf:/logs:rw
-    working_dir: /app
+      - ./csv:/csv
+      - ./state:/state
+      - ./logs/csv_importer:/logs/csv_importer:rw
     restart: unless-stopped
     networks:
       - elastic
-    
-    # 資源限制（PDF 處理可能消耗較多記憶體）
-    mem_limit: 4g
-    cpus: '2.0'
-    
-    # 健康檢查
-    healthcheck:
-      test: ["CMD", "python", "-c", "import pymysql; pymysql.connect(host='mysql', user='root', password='root')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 60s
 
-  # 將轉入 db 資料抽取再解析
-  pdf-parser:
-    build:
-      context: ./scripts/pdf_parser
-      dockerfile: Dockerfile.pdf_parser
-    container_name: pdf_parser
-    depends_on:
-      mysql:
-        condition: service_healthy
-      pdf-processor:
-        condition: service_healthy
-    environment:
-    # MySQL 連線設定
-      - MYSQL_HOST=mysql
-      - MYSQL_PORT=3306
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
-      - MYSQL_DATABASE=fuhsin_erp_demo
-      
-    # 處理參數
-      - SCAN_INTERVAL=${PARSER_SCAN_INTERVAL:-60}     # 掃描間隔（秒）
-      - BATCH_SIZE=${PARSER_BATCH_SIZE:-10}           # 每批處理文件數
-      - DEBUG_MODE=${DEBUG_MODE:-false}
-      
-    # 日誌設定
-      - LOG_LEVEL=INFO
-      - PYTHONUNBUFFERED=1
-    volumes:
-      - ./scripts/pdf_parser:/app:ro
-      - ./state/parser:/state
-      - ./logs/parser:/logs:rw  
-    working_dir: /app
-  # 健康檢查
-    healthcheck:
-      test: ["CMD", "python", "-c", "import pymysql; pymysql.connect(host='mysql', user='root', password='root')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 60s
-    restart: unless-stopped
-    networks:
-      - elastic
-  # 資源限制
-    mem_limit: 2g
-    cpus: '1.0'
-  
   # 建立資料下載服務
   pdf-file-server:
     image: nginx:alpine
@@ -359,8 +288,6 @@ services:
         condition: service_healthy
       elasticsearch:
         condition: service_healthy
-      pdf-parser:
-        condition: service_started
     environment:
     # 資料庫（SQLAlchemy DSN；統一用 utf8mb4）
       - DB_URL=mysql+pymysql://root:root@mysql:3306/fuhsin_erp_demo?charset=utf8mb4
@@ -392,24 +319,6 @@ services:
       - elastic
 
 # ============== React 前端應用 ==============
-  # web-ui -> 部署用
-  web-ui:
-    profiles: ["prod"]
-    build: 
-      context: ./web
-      dockerfile: Dockerfile
-    container_name: web-ui
-    depends_on:
-      rag-api:
-        condition: service_healthy
-    ports:
-      - "80:80"
-    environment:
-      - VITE_API_URL=/api       # VITE -> VITE_* ; REACT CRA -> REACT_APP_*
-    restart: unless-stopped
-    networks:
-      - elastic
-
   # 開發：Vite dev server + HMR
   web-ui-dev:
     profiles: ["dev"]

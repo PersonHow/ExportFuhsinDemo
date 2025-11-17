@@ -1,0 +1,361 @@
+2025-11-17 07:23:41,271 - __main__ - INFO - ============================================================
+2025-11-17 07:23:41,272 - __main__ - INFO - 🚀 MySQL 自動導入服務啟動
+2025-11-17 07:23:41,272 - __main__ - INFO - 📁 監控目錄: /mnt/sql/incoming
+2025-11-17 07:23:41,272 - __main__ - INFO - 🔄 掃描間隔: 10 秒
+2025-11-17 07:23:41,273 - __main__ - INFO - 📦 批次大小: 1000
+2025-11-17 07:23:41,273 - __main__ - INFO - ============================================================
+2025-11-17 07:23:41,273 - __main__ - INFO - ✅ MySQL 連線成功
+2025-11-17 07:23:41,275 - __main__ - INFO - 🔍 發現 8 個 SQL 檔案
+2025-11-17 07:23:41,283 - __main__ - INFO - 📦 發現檔案: 00_init.sql (0.01 MB)
+2025-11-17 07:23:41,285 - __main__ - INFO - 📝 開始處理: 00_init.sql
+2025-11-17 07:23:41,290 - __main__ - INFO - 📄 解析完成，共 286 行
+2025-11-17 07:28:15,553 - __main__ - INFO - ============================================================
+2025-11-17 07:28:15,554 - __main__ - INFO - 🚀 MySQL 自動導入服務啟動
+2025-11-17 07:28:15,554 - __main__ - INFO - 📁 監控目錄: /mnt/sql/incoming
+2025-11-17 07:28:15,554 - __main__ - INFO - 🔄 掃描間隔: 10 秒
+2025-11-17 07:28:15,555 - __main__ - INFO - 📦 批次大小: 1000
+2025-11-17 07:28:15,555 - __main__ - INFO - ============================================================
+2025-11-17 07:28:15,555 - __main__ - INFO - ✅ MySQL 連線成功
+2025-11-17 07:28:15,557 - __main__ - INFO - 🔍 發現 8 個 SQL 檔案
+2025-11-17 07:28:15,564 - __main__ - INFO - 📦 發現檔案: 00_init.sql (0.01 MB)
+2025-11-17 07:28:15,566 - __main__ - INFO - 📝 開始處理: 00_init.sql
+2025-11-17 07:28:15,571 - __main__ - INFO - 📄 解析完成，共 286 行
+2025-11-17 07:28:15,755 - __main__ - INFO - 最後批次: 成功 9, 失敗 0
+2025-11-17 07:28:15,762 - __main__ - INFO - ✅ 完成: 成功執行 9 個語句
+2025-11-17 07:28:15,768 - __main__ - INFO - ✅ 處理成功，耗時 0.20 秒
+2025-11-17 07:28:15,781 - __main__ - INFO - 📦 發現檔案: complaint_records_202511170146.sql (0.05 MB)
+2025-11-17 07:28:15,789 - __main__ - INFO - 📝 開始處理: complaint_records_202511170146.sql
+2025-11-17 07:28:15,804 - __main__ - INFO - 📄 解析完成，共 544 行
+2025-11-17 07:28:15,805 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S的店,   系辦業務|\n他們的自有品牌包裝也都很堅國。 包      ' at line 105")
+2025-11-17 07:28:15,810 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 07:28:15,832 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 07:28:15,848 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 07:28:15,874 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 07:28:15,884 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 07:28:15,890 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 07:28:15,900 - __main__ - INFO - 📦 發現檔案: ecn_applications_202511170146.sql (0.05 MB)
+2025-11-17 07:28:15,909 - __main__ - INFO - 📝 開始處理: ecn_applications_202511170146.sql
+2025-11-17 07:28:15,923 - __main__ - INFO - 📄 解析完成，共 709 行
+2025-11-17 07:28:15,924 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_applications`, CONSTRAINT `ecn_applications_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docume
+2025-11-17 07:28:15,930 - __main__ - INFO - 最後批次: 成功 0, 失敗 1
+2025-11-17 07:28:15,935 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 1
+2025-11-17 07:28:15,940 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 07:28:15,949 - __main__ - INFO - 📦 發現檔案: ecn_notices_202511170146.sql (0.02 MB)
+2025-11-17 07:28:15,955 - __main__ - INFO - 📝 開始處理: ecn_notices_202511170146.sql
+2025-11-17 07:28:15,963 - __main__ - INFO - 📄 解析完成，共 201 行
+2025-11-17 07:28:15,965 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 07:28:15,971 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 07:28:15,996 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 07:28:16,018 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 07:28:16,045 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 07:28:16,050 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 07:28:16,057 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 07:28:16,070 - __main__ - INFO - 📦 發現檔案: fmea_records_202511170146.sql (0.02 MB)
+2025-11-17 07:28:16,073 - __main__ - INFO - 📝 開始處理: fmea_records_202511170146.sql
+2025-11-17 07:28:16,083 - __main__ - INFO - 📄 解析完成，共 92 行
+2025-11-17 07:28:16,085 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 07:28:16,089 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖','DFMEA','L鎖','劉庭毓',NULL,NULL,NULL,NULL,NULL,NU
+2025-11-17 07:28:16,116 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 07:28:16,139 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 07:28:16,163 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 07:28:16,171 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 07:28:16,176 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 07:28:16,191 - __main__ - INFO - 📦 發現檔案: pdf_processing_log_202511170146.sql (0.02 MB)
+2025-11-17 07:28:16,198 - __main__ - INFO - 📝 開始處理: pdf_processing_log_202511170146.sql
+2025-11-17 07:28:16,212 - __main__ - INFO - 📄 解析完成，共 244 行
+2025-11-17 07:28:16,493 - __main__ - INFO - 最後批次: 成功 23, 失敗 0
+2025-11-17 07:28:16,506 - __main__ - INFO - ✅ 完成: 成功執行 23 個語句
+2025-11-17 07:28:16,513 - __main__ - INFO - ✅ 處理成功，耗時 0.31 秒
+2025-11-17 07:28:16,533 - __main__ - INFO - 📦 發現檔案: structured_documents_202511170145.sql (0.09 MB)
+2025-11-17 07:28:16,543 - __main__ - INFO - 📝 開始處理: structured_documents_202511170145.sql
+2025-11-17 07:28:16,555 - __main__ - INFO - 📄 解析完成，共 120 行
+2025-11-17 07:28:16,556 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,559 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)...\',\'["FM
+2025-11-17 07:28:16,586 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖 結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 7")
+2025-11-17 07:28:16,602 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,627 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,653 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,690 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,725 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,755 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,784 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,810 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 07:28:16,838 - __main__ - INFO - 最後批次: 成功 0, 失敗 11
+2025-11-17 07:28:16,858 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 11
+2025-11-17 07:28:16,871 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 07:28:16,880 - __main__ - INFO - 📦 發現檔案: technical_documents_202511170145.sql (0.70 MB)
+2025-11-17 07:28:16,906 - __main__ - INFO - 📝 開始處理: technical_documents_202511170145.sql
+2025-11-17 07:28:16,962 - __main__ - INFO - 📄 解析完成，共 14711 行
+2025-11-17 07:28:16,963 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'各\' 使用12組連號貼紙 為避免產線解讀\n不全, 會再加上"同箱ä¸\' at line 128')
+2025-11-17 07:28:16,967 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Copper Creek(JM)規範                                       
+2025-11-17 07:28:16,993 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '品係課/二等工程師:黃雅祺。 | 2025/8720 | OOSC~—~—CSSCSCSCSC*Y\nå\x93'
+2025-11-17 07:28:17,015 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S00029215164 |\n','2025-11-11 16:23:33','2025-11-11 16:23
+2025-11-17 07:28:17,039 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '了\n人\n說 [BREA == [UHV-P100CB19-XQ (客戶品號    )             
+2025-11-17 07:28:17,056 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&\nat sete          了         站                    ~和 ~—_
+2025-11-17 07:28:17,082 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's 18      wHooO2}sa        AnCO        全|選民\n8}&/S8]e] $2
+2025-11-17 07:28:17,127 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖\n結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 225")
+2025-11-17 07:28:17,148 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)–(cid:5)(cid:
+2025-11-17 07:28:17,164 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S   ‘a\nia He   圖   跟     Be ge a               By   2)  
+2025-11-17 07:28:17,183 - __main__ - INFO - 最後批次: 成功 1, 失敗 10
+2025-11-17 07:28:17,190 - __main__ - WARNING - ⚠️ 完成: 成功 1, 失敗 10
+2025-11-17 07:28:17,213 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 07:29:47,310 - __main__ - INFO - 💤 無新檔案，等待 20 秒...
+2025-11-17 07:33:07,350 - __main__ - INFO - 💤 無新檔案，等待 30 秒...
+2025-11-17 07:38:07,416 - __main__ - INFO - 💤 無新檔案，等待 40 秒...
+2025-11-17 08:34:37,133 - __main__ - INFO - ============================================================
+2025-11-17 08:34:37,133 - __main__ - INFO - 🚀 MySQL 自動導入服務啟動
+2025-11-17 08:34:37,134 - __main__ - INFO - 📁 監控目錄: /mnt/sql/incoming
+2025-11-17 08:34:37,134 - __main__ - INFO - 🔄 掃描間隔: 10 秒
+2025-11-17 08:34:37,134 - __main__ - INFO - 📦 批次大小: 1000
+2025-11-17 08:34:37,135 - __main__ - INFO - ============================================================
+2025-11-17 08:34:37,135 - __main__ - INFO - ✅ MySQL 連線成功
+2025-11-17 08:34:37,137 - __main__ - INFO - 🔍 發現 8 個 SQL 檔案
+2025-11-17 08:34:37,146 - __main__ - INFO - 📦 發現檔案: 00_init.sql (0.01 MB)
+2025-11-17 08:34:37,161 - __main__ - INFO - ⏭️ 跳過已處理: 00_init.sql
+2025-11-17 08:34:37,166 - __main__ - INFO - 📦 發現檔案: complaint_records_202511170146.sql (0.05 MB)
+2025-11-17 08:34:37,177 - __main__ - INFO - ⏭️ 跳過已處理: complaint_records_202511170146.sql
+2025-11-17 08:34:37,182 - __main__ - INFO - 📦 發現檔案: ecn_applications_202511170146.sql (0.05 MB)
+2025-11-17 08:34:37,196 - __main__ - INFO - ⏭️ 跳過已處理: ecn_applications_202511170146.sql
+2025-11-17 08:34:37,204 - __main__ - INFO - 📦 發現檔案: ecn_notices_202511170146.sql (0.02 MB)
+2025-11-17 08:34:37,220 - __main__ - INFO - ⏭️ 跳過已處理: ecn_notices_202511170146.sql
+2025-11-17 08:34:37,225 - __main__ - INFO - 📦 發現檔案: fmea_records_202511170146.sql (0.02 MB)
+2025-11-17 08:34:37,242 - __main__ - INFO - ⏭️ 跳過已處理: fmea_records_202511170146.sql
+2025-11-17 08:34:37,246 - __main__ - INFO - 📦 發現檔案: pdf_processing_log_202511170146.sql (0.02 MB)
+2025-11-17 08:34:37,256 - __main__ - INFO - ⏭️ 跳過已處理: pdf_processing_log_202511170146.sql
+2025-11-17 08:34:37,261 - __main__ - INFO - 📦 發現檔案: structured_documents_202511170145.sql (0.09 MB)
+2025-11-17 08:34:37,270 - __main__ - INFO - ⏭️ 跳過已處理: structured_documents_202511170145.sql
+2025-11-17 08:34:37,274 - __main__ - INFO - 📦 發現檔案: technical_documents_202511170145.sql (0.70 MB)
+2025-11-17 08:34:37,299 - __main__ - INFO - ⏭️ 跳過已處理: technical_documents_202511170145.sql
+2025-11-17 08:36:07,168 - __main__ - INFO - 💤 無新檔案，等待 20 秒...
+2025-11-17 08:37:38,447 - __main__ - INFO - ============================================================
+2025-11-17 08:37:38,447 - __main__ - INFO - 🚀 MySQL 自動導入服務啟動
+2025-11-17 08:37:38,448 - __main__ - INFO - 📁 監控目錄: /mnt/sql/incoming
+2025-11-17 08:37:38,448 - __main__ - INFO - 🔄 掃描間隔: 10 秒
+2025-11-17 08:37:38,449 - __main__ - INFO - 📦 批次大小: 1000
+2025-11-17 08:37:38,449 - __main__ - INFO - ============================================================
+2025-11-17 08:37:38,450 - __main__ - INFO - ✅ MySQL 連線成功
+2025-11-17 08:39:55,080 - __main__ - INFO - ============================================================
+2025-11-17 08:39:55,080 - __main__ - INFO - 🚀 MySQL 自動導入服務啟動
+2025-11-17 08:39:55,081 - __main__ - INFO - 📁 監控目錄: /mnt/sql/incoming
+2025-11-17 08:39:55,081 - __main__ - INFO - 🔄 掃描間隔: 10 秒
+2025-11-17 08:39:55,082 - __main__ - INFO - 📦 批次大小: 1000
+2025-11-17 08:39:55,082 - __main__ - INFO - ============================================================
+2025-11-17 08:39:55,083 - __main__ - INFO - ✅ MySQL 連線成功
+2025-11-17 08:39:55,086 - __main__ - INFO - 🔍 發現 8 個 SQL 檔案
+2025-11-17 08:39:55,101 - __main__ - INFO - 📦 發現檔案: 00_init.sql (0.01 MB)
+2025-11-17 08:39:55,117 - __main__ - INFO - ⏭️ 跳過已處理: 00_init.sql
+2025-11-17 08:39:55,123 - __main__ - INFO - 📦 發現檔案: complaint_records_202511170146.sql (0.05 MB)
+2025-11-17 08:39:55,138 - __main__ - INFO - ⏭️ 跳過已處理: complaint_records_202511170146.sql
+2025-11-17 08:39:55,144 - __main__ - INFO - 📦 發現檔案: ecn_applications_202511170146.sql (0.05 MB)
+2025-11-17 08:39:55,156 - __main__ - INFO - ⏭️ 跳過已處理: ecn_applications_202511170146.sql
+2025-11-17 08:39:55,161 - __main__ - INFO - 📦 發現檔案: ecn_notices_202511170146.sql (0.02 MB)
+2025-11-17 08:39:55,175 - __main__ - INFO - ⏭️ 跳過已處理: ecn_notices_202511170146.sql
+2025-11-17 08:39:55,181 - __main__ - INFO - 📦 發現檔案: fmea_records_202511170146.sql (0.02 MB)
+2025-11-17 08:39:55,193 - __main__ - INFO - ⏭️ 跳過已處理: fmea_records_202511170146.sql
+2025-11-17 08:39:55,198 - __main__ - INFO - 📦 發現檔案: pdf_processing_log_202511170146.sql (0.02 MB)
+2025-11-17 08:39:55,211 - __main__ - INFO - ⏭️ 跳過已處理: pdf_processing_log_202511170146.sql
+2025-11-17 08:39:55,219 - __main__ - INFO - 📦 發現檔案: structured_documents_202511170145.sql (0.09 MB)
+2025-11-17 08:39:55,238 - __main__ - INFO - ⏭️ 跳過已處理: structured_documents_202511170145.sql
+2025-11-17 08:39:55,243 - __main__ - INFO - 📦 發現檔案: technical_documents_202511170145.sql (0.70 MB)
+2025-11-17 08:39:55,277 - __main__ - INFO - ⏭️ 跳過已處理: technical_documents_202511170145.sql
+2025-11-17 08:40:45,180 - __main__ - INFO - 🔍 發現 7 個 SQL 檔案
+2025-11-17 08:40:45,186 - __main__ - INFO - 📦 發現檔案: complaint_records_202511170146.sql (0.05 MB)
+2025-11-17 08:40:45,191 - __main__ - INFO - 📝 開始處理: complaint_records_202511170146.sql
+2025-11-17 08:40:45,209 - __main__ - INFO - 📄 解析完成，共 544 行
+2025-11-17 08:40:45,211 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S的店,   系辦業務|\n他們的自有品牌包裝也都很堅國。 包      ' at line 105")
+2025-11-17 08:40:45,218 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 08:40:45,241 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 08:40:45,267 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 08:40:45,291 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 08:40:45,296 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 08:40:45,302 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:40:45,312 - __main__ - INFO - 📦 發現檔案: ecn_applications_202511170146.sql (0.05 MB)
+2025-11-17 08:40:45,340 - __main__ - INFO - 📝 開始處理: ecn_applications_202511170146.sql
+2025-11-17 08:40:45,355 - __main__ - INFO - 📄 解析完成，共 709 行
+2025-11-17 08:40:45,359 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_applications`, CONSTRAINT `ecn_applications_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docume
+2025-11-17 08:40:45,364 - __main__ - INFO - 最後批次: 成功 0, 失敗 1
+2025-11-17 08:40:45,379 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 1
+2025-11-17 08:40:45,394 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:40:45,410 - __main__ - INFO - 📦 發現檔案: ecn_notices_202511170146.sql (0.02 MB)
+2025-11-17 08:40:45,436 - __main__ - INFO - 📝 開始處理: ecn_notices_202511170146.sql
+2025-11-17 08:40:45,446 - __main__ - INFO - 📄 解析完成，共 201 行
+2025-11-17 08:40:45,449 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:40:45,455 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:40:45,479 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:40:45,500 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:40:45,525 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 08:40:45,530 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 08:40:45,535 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:40:45,546 - __main__ - INFO - 📦 發現檔案: fmea_records_202511170146.sql (0.02 MB)
+2025-11-17 08:40:45,572 - __main__ - INFO - 📝 開始處理: fmea_records_202511170146.sql
+2025-11-17 08:40:45,583 - __main__ - INFO - 📄 解析完成，共 92 行
+2025-11-17 08:40:45,586 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 08:40:45,593 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖','DFMEA','L鎖','劉庭毓',NULL,NULL,NULL,NULL,NULL,NU
+2025-11-17 08:40:45,616 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 08:40:45,638 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 08:40:45,662 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 08:40:45,665 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 08:40:45,670 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:40:45,679 - __main__ - INFO - 📦 發現檔案: pdf_processing_log_202511170146.sql (0.02 MB)
+2025-11-17 08:40:45,703 - __main__ - INFO - 📝 開始處理: pdf_processing_log_202511170146.sql
+2025-11-17 08:40:45,712 - __main__ - INFO - 📄 解析完成，共 244 行
+2025-11-17 08:40:45,914 - __main__ - INFO - 最後批次: 成功 23, 失敗 0
+2025-11-17 08:40:45,916 - __main__ - INFO - ✅ 完成: 成功執行 23 個語句
+2025-11-17 08:40:45,919 - __main__ - INFO - ✅ 處理成功，耗時 0.21 秒
+2025-11-17 08:40:45,924 - __main__ - INFO - 📦 發現檔案: structured_documents_202511170145.sql (0.09 MB)
+2025-11-17 08:40:45,941 - __main__ - INFO - 📝 開始處理: structured_documents_202511170145.sql
+2025-11-17 08:40:45,969 - __main__ - INFO - 📄 解析完成，共 120 行
+2025-11-17 08:40:45,971 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:45,975 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)...\',\'["FM
+2025-11-17 08:40:46,000 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖 結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 7")
+2025-11-17 08:40:46,044 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,066 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,089 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,111 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,137 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,162 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,189 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:40:46,215 - __main__ - INFO - 最後批次: 成功 1, 失敗 10
+2025-11-17 08:40:46,220 - __main__ - WARNING - ⚠️ 完成: 成功 1, 失敗 10
+2025-11-17 08:40:46,225 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:40:46,236 - __main__ - INFO - 📦 發現檔案: technical_documents_202511170145.sql (0.70 MB)
+2025-11-17 08:40:46,269 - __main__ - INFO - 📝 開始處理: technical_documents_202511170145.sql
+2025-11-17 08:40:46,337 - __main__ - INFO - 📄 解析完成，共 14711 行
+2025-11-17 08:40:46,338 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'各\' 使用12組連號貼紙 為避免產線解讀\n不全, 會再加上"同箱ä¸\' at line 128')
+2025-11-17 08:40:46,343 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Copper Creek(JM)規範                                       
+2025-11-17 08:40:46,365 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '品係課/二等工程師:黃雅祺。 | 2025/8720 | OOSC~—~—CSSCSCSCSC*Y\nå\x93'
+2025-11-17 08:40:46,391 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S00029215164 |\n','2025-11-11 16:23:33','2025-11-11 16:23
+2025-11-17 08:40:46,414 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '了\n人\n說 [BREA == [UHV-P100CB19-XQ (客戶品號    )             
+2025-11-17 08:40:46,438 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&\nat sete          了         站                    ~和 ~—_
+2025-11-17 08:40:46,459 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's 18      wHooO2}sa        AnCO        全|選民\n8}&/S8]e] $2
+2025-11-17 08:40:46,488 - __main__ - ERROR - ❌ SQL 執行失敗: (1062, "Duplicate entry '29f383c52a6df13fdccf717b810a8bf5' for key 'technical_documents.doc_id'")
+2025-11-17 08:40:46,501 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖\n結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 225")
+2025-11-17 08:40:46,522 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)–(cid:5)(cid:
+2025-11-17 08:40:46,544 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S   ‘a\nia He   圖   跟     Be ge a               By   2)  
+2025-11-17 08:40:46,563 - __main__ - INFO - 最後批次: 成功 0, 失敗 11
+2025-11-17 08:40:46,567 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 11
+2025-11-17 08:40:46,573 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:42:16,446 - __main__ - INFO - 💤 無新檔案，等待 20 秒...
+2025-11-17 08:46:39,419 - __main__ - INFO - ============================================================
+2025-11-17 08:46:39,420 - __main__ - INFO - 🚀 MySQL 自動導入服務啟動
+2025-11-17 08:46:39,420 - __main__ - INFO - 📁 監控目錄: /mnt/sql/incoming
+2025-11-17 08:46:39,421 - __main__ - INFO - 🔄 掃描間隔: 10 秒
+2025-11-17 08:46:39,422 - __main__ - INFO - 📦 批次大小: 1000
+2025-11-17 08:46:39,422 - __main__ - INFO - ============================================================
+2025-11-17 08:46:39,423 - __main__ - INFO - ✅ MySQL 連線成功
+2025-11-17 08:46:39,427 - __main__ - INFO - 🔍 發現 8 個 SQL 檔案
+2025-11-17 08:46:39,439 - __main__ - INFO - 📋 處理順序：
+2025-11-17 08:46:39,439 - __main__ - INFO -   1. [初始化] 00_init.sql
+2025-11-17 08:46:39,440 - __main__ - INFO -   2. [主表(technical_documents)] technical_documents_202511170145.sql
+2025-11-17 08:46:39,440 - __main__ - INFO -   3. [關聯表(structured_documents)] structured_documents_202511170145.sql
+2025-11-17 08:46:39,441 - __main__ - INFO -   4. [其他資料] complaint_records_202511170146.sql
+2025-11-17 08:46:39,441 - __main__ - INFO -   5. [其他資料] ecn_applications_202511170146.sql
+2025-11-17 08:46:39,441 - __main__ - INFO -   6. [其他資料] ecn_notices_202511170146.sql
+2025-11-17 08:46:39,442 - __main__ - INFO -   7. [其他資料] fmea_records_202511170146.sql
+2025-11-17 08:46:39,442 - __main__ - INFO -   8. [其他資料] pdf_processing_log_202511170146.sql
+2025-11-17 08:46:39,445 - __main__ - INFO - 📦 發現檔案: 00_init.sql (0.01 MB)
+2025-11-17 08:46:39,477 - __main__ - INFO - 📝 開始處理: 00_init.sql
+2025-11-17 08:46:39,495 - __main__ - INFO - 📄 解析完成，共 286 行
+2025-11-17 08:46:39,559 - __main__ - INFO - 最後批次: 成功 9, 失敗 0
+2025-11-17 08:46:39,575 - __main__ - INFO - ✅ 完成: 成功執行 9 個語句
+2025-11-17 08:46:39,586 - __main__ - INFO - ✅ 處理成功，耗時 0.10 秒
+2025-11-17 08:46:39,599 - __main__ - INFO - 📦 發現檔案: technical_documents_202511170145.sql (0.70 MB)
+2025-11-17 08:46:39,653 - __main__ - INFO - 📝 開始處理: technical_documents_202511170145.sql
+2025-11-17 08:46:39,712 - __main__ - INFO - 📄 解析完成，共 14711 行
+2025-11-17 08:46:39,713 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'各\' 使用12組連號貼紙 為避免產線解讀\n不全, 會再加上"同箱ä¸\' at line 128')
+2025-11-17 08:46:39,718 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Copper Creek(JM)規範                                       
+2025-11-17 08:46:39,740 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '品係課/二等工程師:黃雅祺。 | 2025/8720 | OOSC~—~—CSSCSCSCSC*Y\nå\x93'
+2025-11-17 08:46:39,764 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S00029215164 |\n','2025-11-11 16:23:33','2025-11-11 16:23
+2025-11-17 08:46:39,778 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '了\n人\n說 [BREA == [UHV-P100CB19-XQ (客戶品號    )             
+2025-11-17 08:46:39,802 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&\nat sete          了         站                    ~和 ~—_
+2025-11-17 08:46:39,829 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's 18      wHooO2}sa        AnCO        全|選民\n8}&/S8]e] $2
+2025-11-17 08:46:39,851 - __main__ - ERROR - ❌ SQL 執行失敗: (1062, "Duplicate entry '29f383c52a6df13fdccf717b810a8bf5' for key 'technical_documents.doc_id'")
+2025-11-17 08:46:39,873 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖\n結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 225")
+2025-11-17 08:46:39,899 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)–(cid:5)(cid:
+2025-11-17 08:46:39,924 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S   ‘a\nia He   圖   跟     Be ge a               By   2)  
+2025-11-17 08:46:39,948 - __main__ - INFO - 最後批次: 成功 0, 失敗 11
+2025-11-17 08:46:39,954 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 11
+2025-11-17 08:46:39,959 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:46:39,974 - __main__ - INFO - 📦 發現檔案: structured_documents_202511170145.sql (0.09 MB)
+2025-11-17 08:46:40,000 - __main__ - INFO - 📝 開始處理: structured_documents_202511170145.sql
+2025-11-17 08:46:40,019 - __main__ - INFO - 📄 解析完成，共 120 行
+2025-11-17 08:46:40,020 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,025 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)...\',\'["FM
+2025-11-17 08:46:40,048 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖 結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 7")
+2025-11-17 08:46:40,070 - __main__ - ERROR - ❌ SQL 執行失敗: (1062, "Duplicate entry 'fa8ba80bf555c76f7b68b48e340c102d' for key 'structured_documents.original_doc_id'")
+2025-11-17 08:46:40,086 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,109 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,133 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,161 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,185 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,213 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,240 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`structured_documents`, CONSTRAINT `structured_documents_ibfk_1` FOREIGN KEY (`original_doc_id`) REFERENCES 
+2025-11-17 08:46:40,274 - __main__ - INFO - 最後批次: 成功 0, 失敗 11
+2025-11-17 08:46:40,288 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 11
+2025-11-17 08:46:40,298 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:46:40,312 - __main__ - INFO - 📦 發現檔案: complaint_records_202511170146.sql (0.05 MB)
+2025-11-17 08:46:40,337 - __main__ - INFO - 📝 開始處理: complaint_records_202511170146.sql
+2025-11-17 08:46:40,348 - __main__ - INFO - 📄 解析完成，共 544 行
+2025-11-17 08:46:40,349 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S的店,   系辦業務|\n他們的自有品牌包裝也都很堅國。 包      ' at line 105")
+2025-11-17 08:46:40,356 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 08:46:40,377 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 08:46:40,399 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`complaint_records`, CONSTRAINT `complaint_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docu
+2025-11-17 08:46:40,421 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 08:46:40,427 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 08:46:40,433 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:46:40,447 - __main__ - INFO - 📦 發現檔案: ecn_applications_202511170146.sql (0.05 MB)
+2025-11-17 08:46:40,479 - __main__ - INFO - 📝 開始處理: ecn_applications_202511170146.sql
+2025-11-17 08:46:40,494 - __main__ - INFO - 📄 解析完成，共 709 行
+2025-11-17 08:46:40,496 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_applications`, CONSTRAINT `ecn_applications_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_docume
+2025-11-17 08:46:40,501 - __main__ - INFO - 最後批次: 成功 0, 失敗 1
+2025-11-17 08:46:40,507 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 1
+2025-11-17 08:46:40,513 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:46:40,527 - __main__ - INFO - 📦 發現檔案: ecn_notices_202511170146.sql (0.02 MB)
+2025-11-17 08:46:40,553 - __main__ - INFO - 📝 開始處理: ecn_notices_202511170146.sql
+2025-11-17 08:46:40,564 - __main__ - INFO - 📄 解析完成，共 201 行
+2025-11-17 08:46:40,566 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:46:40,574 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:46:40,604 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:46:40,623 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`ecn_notices`, CONSTRAINT `ecn_notices_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`doc
+2025-11-17 08:46:40,641 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 08:46:40,645 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 08:46:40,649 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:46:40,659 - __main__ - INFO - 📦 發現檔案: fmea_records_202511170146.sql (0.02 MB)
+2025-11-17 08:46:40,679 - __main__ - INFO - 📝 開始處理: fmea_records_202511170146.sql
+2025-11-17 08:46:40,686 - __main__ - INFO - 📄 解析完成，共 92 行
+2025-11-17 08:46:40,687 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 08:46:40,693 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖','DFMEA','L鎖','劉庭毓',NULL,NULL,NULL,NULL,NULL,NU
+2025-11-17 08:46:40,712 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 08:46:40,730 - __main__ - ERROR - ❌ SQL 執行失敗: (1452, 'Cannot add or update a child row: a foreign key constraint fails (`fuhsin_erp_demo`.`fmea_records`, CONSTRAINT `fmea_records_ibfk_1` FOREIGN KEY (`doc_id`) REFERENCES `technical_documents` (`d
+2025-11-17 08:46:40,745 - __main__ - INFO - 最後批次: 成功 0, 失敗 4
+2025-11-17 08:46:40,749 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 4
+2025-11-17 08:46:40,755 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:46:40,772 - __main__ - INFO - 📦 發現檔案: pdf_processing_log_202511170146.sql (0.02 MB)
+2025-11-17 08:46:40,808 - __main__ - INFO - 📝 開始處理: pdf_processing_log_202511170146.sql
+2025-11-17 08:46:40,827 - __main__ - INFO - 📄 解析完成，共 244 行
+2025-11-17 08:46:41,005 - __main__ - INFO - 最後批次: 成功 23, 失敗 0
+2025-11-17 08:46:41,012 - __main__ - INFO - ✅ 完成: 成功執行 23 個語句
+2025-11-17 08:46:41,017 - __main__ - INFO - ✅ 處理成功，耗時 0.20 秒
+2025-11-17 08:48:10,828 - __main__ - INFO - 💤 無新檔案，等待 20 秒...
+2025-11-17 08:51:30,342 - __main__ - INFO - 💤 無新檔案，等待 30 秒...
+2025-11-17 08:52:30,194 - __main__ - INFO - 🔍 發現 1 個 SQL 檔案
+2025-11-17 08:52:30,266 - __main__ - INFO - 📋 處理順序：
+2025-11-17 08:52:30,267 - __main__ - INFO -   1. [主表(technical_documents)] technical_documents_202511170145.sql
+2025-11-17 08:52:30,268 - __main__ - INFO - 📦 發現檔案: technical_documents_202511170145.sql (0.70 MB)
+2025-11-17 08:52:30,304 - __main__ - INFO - 📝 開始處理: technical_documents_202511170145.sql
+2025-11-17 08:52:30,376 - __main__ - INFO - 📄 解析完成，共 14711 行
+2025-11-17 08:52:30,377 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'各\' 使用12組連號貼紙 為避免產線解讀\n不全, 會再加上"同箱ä¸\' at line 128')
+2025-11-17 08:52:30,382 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Copper Creek(JM)規範                                       
+2025-11-17 08:52:30,405 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '品係課/二等工程師:黃雅祺。 | 2025/8720 | OOSC~—~—CSSCSCSCSC*Y\nå\x93'
+2025-11-17 08:52:30,427 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S00029215164 |\n','2025-11-11 16:23:33','2025-11-11 16:23
+2025-11-17 08:52:30,451 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '了\n人\n說 [BREA == [UHV-P100CB19-XQ (客戶品號    )             
+2025-11-17 08:52:30,472 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&\nat sete          了         站                    ~和 ~—_
+2025-11-17 08:52:30,496 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's 18      wHooO2}sa        AnCO        全|選民\n8}&/S8]e] $2
+2025-11-17 08:52:30,521 - __main__ - ERROR - ❌ SQL 執行失敗: (1062, "Duplicate entry '29f383c52a6df13fdccf717b810a8bf5' for key 'technical_documents.doc_id'")
+2025-11-17 08:52:30,541 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's) 產品別 L鎖\n結構分析 功能分析 失效分析 風險分析 DFMEA 優å' at line 225")
+2025-11-17 08:52:30,564 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '“« ‹(cid:158)(cid:16)(cid:156)›fifl(cid:176)–(cid:5)(cid:
+2025-11-17 08:52:30,585 - __main__ - ERROR - ❌ SQL 執行失敗: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S   ‘a\nia He   圖   跟     Be ge a               By   2)  
+2025-11-17 08:52:30,606 - __main__ - INFO - 最後批次: 成功 0, 失敗 11
+2025-11-17 08:52:30,616 - __main__ - WARNING - ⚠️ 完成: 成功 0, 失敗 11
+2025-11-17 08:52:30,628 - __main__ - ERROR - ❌ 處理失敗
+2025-11-17 08:54:00,445 - __main__ - INFO - 💤 無新檔案，等待 20 秒...

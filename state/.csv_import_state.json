@@ -1,0 +1,44 @@
+{
+  "aa92ad162598c5c5ce5399fcab1bee5d": {
+    "file_name": "technical_documents_202511180033.csv",
+    "table": "technical_documents",
+    "rows": 110,
+    "processed_at": "2025-11-17T18:24:32.732585"
+  },
+  "4748ecee0b29ef442a91d914b383f558": {
+    "file_name": "structured_documents_202511180040.csv",
+    "table": "structured_documents",
+    "rows": 109,
+    "processed_at": "2025-11-17T18:24:32.795282"
+  },
+  "7c0c6fdf819c0e946c42ce3ab049ae19": {
+    "file_name": "complaint_records_202511180040.csv",
+    "table": "complaint_records",
+    "rows": 31,
+    "processed_at": "2025-11-17T18:24:32.851713"
+  },
+  "9fbaa21aafdea72fb453fbe13d381ad3": {
+    "file_name": "ecn_applications_202511180040.csv",
+    "table": "ecn_applications",
+    "rows": 9,
+    "processed_at": "2025-11-17T18:24:32.938106"
+  },
+  "5ffba78f4dda708f62dae814231b17bd": {
+    "file_name": "ecn_notices_202511180040.csv",
+    "table": "ecn_notices",
+    "rows": 37,
+    "processed_at": "2025-11-17T18:24:32.978161"
+  },
+  "5e5a4b6840df1b4cd38a3030c8d6b558": {
+    "file_name": "fmea_records_202511180040.csv",
+    "table": "fmea_records",
+    "rows": 32,
+    "processed_at": "2025-11-17T18:24:33.086065"
+  },
+  "d650ab0f8e6e570036c9dd8077215799": {
+    "file_name": "pdf_processing_log_202511180040.csv",
+    "table": "pdf_processing_log",
+    "rows": 221,
+    "processed_at": "2025-11-17T18:24:33.148050"
+  }
+}

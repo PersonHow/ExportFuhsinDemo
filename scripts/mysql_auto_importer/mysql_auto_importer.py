@@ -469,6 +469,34 @@ def wait_for_mysql(max_retries: int = 30) -> bool:
                 return False
     return False
 
+def get_sql_priority(filepath: Path) -> int:
+    """
+    取得 SQL 檔案的處理優先順序
+    數字越小優先順序越高
+    
+    優先順序規則：
+    1. 00_init.sql (初始化)
+    2. technical_documents*.sql (主表)
+    3. structured_documents*.sql (關聯表)
+    4. 其他 .sql 檔案
+    """
+    filename = filepath.name.lower()
+    
+    # 優先順序 1: 初始化檔案
+    if filename.startswith('00_init'):
+        return 1
+    
+    # 優先順序 2: technical_documents
+    if 'technical_documents' in filename:
+        return 2
+    
+    # 優先順序 3: structured_documents
+    if 'structured_documents' in filename:
+        return 3
+    
+    # 優先順序 4: 其他檔案（按檔名排序）
+    return 4
+
 def scan_and_process():
     """掃描並處理 SQL 檔案"""
     # 確保目錄存在
@@ -480,7 +508,23 @@ def scan_and_process():
     state = load_state()
     
     # 掃描檔案
-    sql_files = sorted(WATCH_DIR.glob("*.sql"))
+    sql_files = list(WATCH_DIR.glob("*.sql"))
+    
+    # 按優先順序排序
+    sql_files.sort(key=lambda f: (get_sql_priority(f), f.name))
+    
+    # 顯示處理順序
+    if sql_files:
+        logger.info("📋 處理順序：")
+        for idx, f in enumerate(sql_files, 1):
+            priority = get_sql_priority(f)
+            priority_name = {
+                1: "初始化",
+                2: "主表(technical_documents)",
+                3: "關聯表(structured_documents)",
+                4: "其他資料"
+            }.get(priority, "其他")
+            logger.info(f"  {idx}. [{priority_name}] {f.name}")
     
     for sql_file in sql_files:
         # 檢查檔案大小
